@@ -10,8 +10,7 @@ class ApplicationController < ActionController::Base
         render 'sessions/new'
       end
     end
-    def get
-      @b=User.find(1)
-      @a=@b.cmts.all
+    def products
+      @products = Product.all
     end
 end

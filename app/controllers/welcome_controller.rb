@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
   def home
-    get
+    products
   end
 end

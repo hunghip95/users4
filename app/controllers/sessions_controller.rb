@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
   end
   def destroy
     log_out
-    get
+    products
     render 'welcome/home'
   end
 end

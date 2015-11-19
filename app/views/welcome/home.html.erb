@@ -6,14 +6,19 @@
 	<%= link_to 'Log out',logout_path,method: 'delete' %>
 	<%= link_to 'Acount',user_path(@current_user) %>
 	<% if @current_user.admin?%>
-		<%= link_to 'Cmts',new_cmt_path%>
+		<%= link_to 'New item',new_product_path %>
+		<%= link_to 'Index item',products_path %>
 	<%end%>
 <%else%>
 	<%= link_to 'Signup',users_new_path %>
 	<%= link_to 'Login',login_path%>
 <%end%>
 <br/>
-<% @a.each do |f| %>
-<%= f.content %>
-<br/>
+<% @products.each do |t|%>
+	<%= link_to t.name,t %>	
+	<br/>
+	So luong: <%= t.num %>
+	Gia: <%= t.price %>đ
+	<br/>
 <%end%>
+

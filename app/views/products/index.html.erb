@@ -1,0 +1,13 @@
+<h1>Your all products</h1>
+
+<%= link_to 'Home',welcome_home_path %>
+<br/>
+<% @products.each do |t| %>
+	<%= link_to t.name,t %>|
+	<%= link_to 'Edit',edit_product_path(t)%>|
+	<%= link_to 'delete',product_path(t),method: 'delete',data: {confirm: "Are you sure ?"}%>
+	<br/>
+	So luong: <%= t.num %>
+	Gia: <%= t.price %>đ
+	<br/>
+<%end%>

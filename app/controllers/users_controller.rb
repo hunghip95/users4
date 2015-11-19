@@ -10,7 +10,9 @@ class UsersController < ApplicationController
   end
   def show
     @user = User.find(params[:id])
-    @cmts = @user.cmts.all
+    if @user.admin?
+      @products = Product.all
+    end
   end
   def create
     @user = User.find_by(name: params[:user][:name])
@@ -42,7 +44,7 @@ class UsersController < ApplicationController
   def destroy
     @a = User.find(params[:id])
     @a.destroy
-    render 'welcome/home'
+    redirect_to :action=>'index'
   end
   private
     def get

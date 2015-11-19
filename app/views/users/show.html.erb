@@ -11,13 +11,4 @@
 <%end%>
 <br/>
 <%= link_to 'Home',welcome_home_path %>
-
-<% if @user.cmts.any? %>
-	<h3>Cmts (<%= @user.cmts.count %>)</h3>
-	<% @cmts.each do |t|%>
-	<%= t.content %>
-	<br/>
-	Posted <%= time_ago_in_words(t.created_at) %> ago.
-	<br/>
-	<%end%>
-<%end%>
+<br/>
