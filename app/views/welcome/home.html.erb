@@ -1,0 +1,19 @@
+<h1>Hello</h1>
+<% if logged_in? %>	
+	<% if @current_user.admin?%>
+		<%= link_to "Users", users_path %>
+	<%end%>
+	<%= link_to 'Log out',logout_path,method: 'delete' %>
+	<%= link_to 'Acount',user_path(@current_user) %>
+	<% if @current_user.admin?%>
+		<%= link_to 'Cmts',new_cmt_path%>
+	<%end%>
+<%else%>
+	<%= link_to 'Signup',users_new_path %>
+	<%= link_to 'Login',login_path%>
+<%end%>
+<br/>
+<% @a.each do |f| %>
+<%= f.content %>
+<br/>
+<%end%>

@@ -1,0 +1,8 @@
+<h1>All Users</h1>
+<%= link_to 'Home',welcome_home_path %>
+<br/>
+<%@users.each do |t|%>
+<%=link_to t.name,t%>
+<%=link_to 'Delete',user_path(t),method: 'delete',data: {confirm: "Are you sure?"}%>
+<br/>
+<%end%>
