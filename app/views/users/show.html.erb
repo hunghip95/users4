@@ -1,6 +1,7 @@
-<%= link_to @user.name,@user %>
+<h1>Hello <%=@user.name%>!</h1>
+Name:<%= link_to @user.name,@user %>
 <br/>
-<%= @user.email %>
+Email:<%= @user.email %>
 <br/>
 
 <% if logged_in? %>
