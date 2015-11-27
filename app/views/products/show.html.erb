@@ -1,12 +1,11 @@
 <h1>Your item</h1>
 
 <h3><%= @product.name %></h4>
-So luong: <%= @product.num %>
-Gia: <%= @product.price %>đ
 <% if logged_in?%>
 	<% if current_user.admin? %>
 		<%= link_to 'Edit',edit_product_path%>
 	<%end%>
 <%end%>
 <%= link_to 'Home',welcome_home_path%>
-
+<%= link_to 'Create new phone',new_phone_path%>
+<%phoneof%>
