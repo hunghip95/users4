@@ -1,0 +1,6 @@
+<h1>Your phone</h1>
+Name:<%= @phone.name %>
+Number:<%= @phone.num %>
+<%= link_to 'Home',welcome_home_path %>
+<%= link_to 'Edit',edit_product_phone_path(@product,@phone) %>
+<%= link_to 'Delete',product_phone_path(@product,@phone),method: 'delete'%>

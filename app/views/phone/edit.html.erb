@@ -1,0 +1,8 @@
+<h1>Edit your phone</h1>
+<%= form_for @phone,url: product_phone_path do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+	<%= f.label :number %>
+	<%= f.number_field :num%>
+	<%= f.submit :Edit %>
+<%end%>

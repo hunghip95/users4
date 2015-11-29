@@ -1,0 +1,10 @@
+<h1>Your new phone</h1>
+
+<%= form_for :phone,url: product_phone_index_path do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+	<%= f.label :number %>
+	<%= f.number_field :num %>
+	<%= f.submit :Create%>
+<%end%>
+<%= link_to 'Home',welcome_home_path %>
