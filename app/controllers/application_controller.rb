@@ -10,6 +10,11 @@ class ApplicationController < ActionController::Base
         render 'sessions/new'
       end
     end
+    def admin?
+      if !current_user.admin?
+        redirect_to 'welcome/home'
+      end
+    end
     def products
       @products = Product.all
     end

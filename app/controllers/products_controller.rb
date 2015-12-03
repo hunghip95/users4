@@ -1,4 +1,7 @@
 class ProductsController < ApplicationController
+  
+  before_action :admin?,only: [:edit,:new,:destroy,:update]
+  
   def new    
   end
   
@@ -18,7 +21,6 @@ class ProductsController < ApplicationController
   
   def edit
     @product = Product.find(params[:id])
-    
   end
   
   def destroy

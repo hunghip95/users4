@@ -1,9 +1,9 @@
 class PhoneController < ApplicationController
   
+  before_action :admin?,only: [:edit,:update,:destroy,:new]
   before_action :get_product_id
   
   def index
-    @product = Product.find(params[:product_id])
     @phones = @product.phones.all
   end
   
@@ -33,8 +33,9 @@ class PhoneController < ApplicationController
   def destroy
     @phone = Phone.find(params[:id])
     @phone.delete
-    redirect_to product_path
+    redirect_to product_path(@product)
   end
+  
   private
     def phone
       params.require(:phone).permit(:name,:num)

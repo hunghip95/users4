@@ -6,10 +6,12 @@
 		<%= link_to 'Edit',edit_product_path%>
 	<%end%>
 <%end%>
+
 <%= link_to 'Home',welcome_home_path%>
 <%= link_to 'New product',new_product_path %>
 <%= link_to 'Create new phone',new_product_phone_path(@product) %>
 <br/>
+
 <% @phones.each do |t| %>
 	Name:<%= link_to t.name,product_phone_path(@product,t) %>
 	Number:<%= t.num %>
