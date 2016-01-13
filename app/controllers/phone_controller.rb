@@ -1,7 +1,7 @@
 class PhoneController < ApplicationController
   
   before_action :admin?,only: [:edit,:update,:destroy,:new]
-  before_action :get_product_id
+  before_action :get_product_id,only: [:create,:index]
   
   def index
     @phones = @product.phones.all
@@ -27,18 +27,18 @@ class PhoneController < ApplicationController
   def update
     @phone = Phone.find(params[:id])
     @phone.update(phone)
-    redirect_to product_phone_path(@product,@phone)
+    redirect_to phone_path(@phone)
   end
   
   def destroy
     @phone = Phone.find(params[:id])
     @phone.delete
-    redirect_to product_path(@product)
+    redirect_to manageall_path
   end
   
   private
     def phone
-      params.require(:phone).permit(:name,:num)
+      params.require(:phone).permit(:name,:price)
     end
     
     def get_product_id

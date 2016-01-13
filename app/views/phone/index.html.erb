@@ -1,5 +1,8 @@
-<h1>Your index</h1>
-<% @phones.each do |t| %>
-<%= t.name %>
-<br/>
-<%end%>
+<div class="container">
+	<h1>Your index</h1>
+	<% @phones.each do |t| %>
+		<%= t.name %>
+		<%= t.price%>
+		<br/>
+	<%end%>
+</div>

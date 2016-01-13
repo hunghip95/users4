@@ -1,6 +1,19 @@
-<h1>Your phone</h1>
-Name:<%= @phone.name %>
-Number:<%= @phone.num %>
-<%= link_to 'Home',welcome_home_path %>
-<%= link_to 'Edit',edit_product_phone_path(@product,@phone) %>
-<%= link_to 'Delete',product_phone_path(@product,@phone),method: 'delete'%>
+<div class="container">
+	
+	<h1>Your phone</h1>
+	Name:<%= @phone.name %>
+	Price:<%= @phone.price %>
+	
+	<%= form_tag phone_baskets_path(@phone) do  %>
+		<%= label_tag :Number%>
+		<%= number_field_tag :num,params[:num] %>
+		<%= submit_tag :AddtoBasket%>
+	<%end%>
+	
+	<%= link_to "Buy",new_phone_order_path(@phone) %>
+		
+	<% if logged_in? && current_user.admin? %>
+		<%= link_to 'Edit',edit_phone_path(@phone) %>
+		<%= link_to 'Delete',phone_path(@phone),method: 'delete'%>
+	<%end%>
+</div>

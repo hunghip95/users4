@@ -1,8 +1,10 @@
-<h1>Edit your phone</h1>
-<%= form_for @phone,url: product_phone_path do |f| %>
-	<%= f.label :name %>
-	<%= f.text_field :name %>
-	<%= f.label :number %>
-	<%= f.number_field :num%>
-	<%= f.submit :Edit %>
-<%end%>
+<div class="container">
+	<h1>Edit your phone</h1>
+	<%= form_for @phone,url: phone_path(@phone) do |f| %>
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+		<%= f.label :price %>
+		<%= f.number_field :price %>
+		<%= f.submit :Edit %>
+	<%end%>
+</div>

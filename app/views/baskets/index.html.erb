@@ -1,0 +1,18 @@
+<h1>Your Basket</h1>
+<table>
+<% @basket.each do |t|%>
+<tr>
+	<td><%= t.name %></td>
+	<td><span>||</span></td>
+	<td>
+		<%= form_for t, url: user_basket_path(current_user,t) do |f| %>
+			<%= f.label :Number%>
+			<%= f.number_field :num %>
+			<%= f.submit :Edit %>
+		<%end%>
+	</td>
+	<td>Price <%= t.price%></td>
+	<td><%= link_to "Delete",user_basket_path(current_user,t),method: 'delete' %></td>
+</tr>
+<%end%>
+</table>
