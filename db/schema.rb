@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160111024845) do
+ActiveRecord::Schema.define(version: 20160114113334) do
 
   create_table "add_colum_to_baskets", force: :cascade do |t|
     t.integer  "phone_id"
@@ -107,6 +107,7 @@ ActiveRecord::Schema.define(version: 20160111024845) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "num"
   end
 
   create_table "pros", force: :cascade do |t|
