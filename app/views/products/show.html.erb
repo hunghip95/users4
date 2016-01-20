@@ -1,32 +1,34 @@
-<div class="container">	
-	<h1><%= @product.name %></h1>	
-	<% if logged_in? && current_user.admin? %>
-		<%= link_to 'New product',new_product_path %>
-		<%= link_to 'Create new phone',new_product_phone_path(@product) %>
-	<%end%>
-	
-	<% if logged_in? && current_user.admin? %>
-		<%= link_to 'Edit',edit_product_path%>
-	<%end%>
-
-	<hr/>
-	<table>	
-		<% @phones.each do |t| %>
-			<tr>
-				<td><%= link_to t.name,product_phone_path(@product,t) %></td>
-				<td>Price:<%= t.price%></td>
-				<td> 
-					<%= form_tag phone_baskets_path(t) do %>
-						<%= label_tag :Number%>
-						<%= number_field_tag :num,params[:num] %>
-						<%= submit_tag :AddtoBasket%>
-					<%end%> 
-				</td>
-				<td>
-					<%= link_to "Buy",new_phone_order_path(t) %>
-				</td>
-			</tr>
+<div class='box1'>	
+	<div class="container">	
+		<h1><%= @product.name %></h1>	
+		<% if logged_in? && current_user.admin? %>
+			<%= link_to 'New product',new_product_path %>
+			<%= link_to 'Create new phone',new_product_phone_path(@product) %>
 		<%end%>
 		
-	</table>
+		<% if logged_in? && current_user.admin? %>
+			<%= link_to 'Edit',edit_product_path%>
+		<%end%>
+	
+		<hr/>
+		<table>	
+			<% @phones.each do |t| %>
+				<tr>
+					<td><%= link_to t.name,product_phone_path(@product,t) %></td>
+					<td>Price:<%= t.price%></td>
+					<td> 
+						<%= form_tag phone_baskets_path(t) do %>
+							<%= label_tag :Number%>
+							<%= number_field_tag :num,params[:num] %>
+							<%= submit_tag :AddtoBasket%>
+						<%end%> 
+					</td>
+					<td>
+						<%= link_to "Buy",new_phone_order_path(t) %>
+					</td>
+				</tr>
+			<%end%>
+			
+		</table>
+	</div>
 </div>

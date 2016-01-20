@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160114113334) do
+ActiveRecord::Schema.define(version: 20160118020029) do
 
   create_table "add_colum_to_baskets", force: :cascade do |t|
     t.integer  "phone_id"
@@ -101,6 +101,7 @@ ActiveRecord::Schema.define(version: 20160114113334) do
     t.integer  "price"
   end
 
+  add_index "phones", ["name"], name: "index_phones_on_name"
   add_index "phones", ["product_id"], name: "index_phones_on_product_id"
 
   create_table "products", force: :cascade do |t|

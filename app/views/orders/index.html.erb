@@ -1,26 +1,28 @@
-<h1>Your Orders </h1>
-<% if current_user.admin? %>
+<div class='box1'>
+	<h1>Your Orders </h1>
+	<% if current_user.admin? %>
+		<table>
+			<% @orders.each do |t| %>
+				<tr>
+					<td> Customer: <%= t.namecustomer%></td>
+					<td> <%= t.namephone %> </td>
+					<td> Number:<%= t.num %> </td>
+					<td> PhoneNumber: <%= t.phonenumber %></td>
+					<td> Address:<%= t.address %> </td>
+					<td> <%= link_to "Delete",user_order_path(current_user,t), method: 'delete' %> </td>
+				</tr>
+			<%end%>
+		</table>
+	<%else%>
 	<table>
-		<% @orders.each do |t| %>
+		<% @order.each do |t| %>
 			<tr>
-				<td> Customer: <%= t.namecustomer%></td>
 				<td> <%= t.namephone %> </td>
 				<td> Number:<%= t.num %> </td>
-				<td> PhoneNumber: <%= t.phonenumber %></td>
 				<td> Address:<%= t.address %> </td>
 				<td> <%= link_to "Delete",user_order_path(current_user,t), method: 'delete' %> </td>
 			</tr>
 		<%end%>
 	</table>
-<%else%>
-<table>
-	<% @order.each do |t| %>
-		<tr>
-			<td> <%= t.namephone %> </td>
-			<td> Number:<%= t.num %> </td>
-			<td> Address:<%= t.address %> </td>
-			<td> <%= link_to "Delete",user_order_path(current_user,t), method: 'delete' %> </td>
-		</tr>
 	<%end%>
-</table>
-<%end%>
+</div>

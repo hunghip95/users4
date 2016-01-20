@@ -1,13 +1,15 @@
-<h1>Your Result</h1>
-
-<h3>Has <%= @result.count()%> results </h3>
-<br/>
-
-<table>
-	<% @result.each do |t|	%>
-	<tr>
-		<td><%= link_to t.name,phone_path(t)%></td>
-		<td><%= t.price%></td>
-	</tr>
-	<%end%>
-</table>
+<div class='box1'>	
+	<h1>Your Result</h1>
+	
+	<h3>Has <%= @result.count()%> results </h3>
+	<br/>
+	
+	<table>
+		<% @result.each do |t|	%>
+		<tr>
+			<td><%= link_to t.name,phone_path(t)%></td>
+			<td><%= t.price%></td>
+		</tr>
+		<%end%>
+	</table>
+</div>

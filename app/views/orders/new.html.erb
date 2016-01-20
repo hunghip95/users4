@@ -1,12 +1,14 @@
-<h1>New Order <%= @phone.name %> </h1>
-<%= form_for :order,url: phone_orders_path(@phone) do |f| %>
-	<%= f.label :NameCustomer %>
-	<%= f.text_field :namecustomer %>
-	<%= f.label :PhoneNumber %>
-	<%= f.text_field :phonenumber %>
-	<%= f.label :Address %>
-	<%= f.text_field :address %>
-	<%= f.label :number %>
-	<%= f.number_field :num %>
-	<%= f.submit :CreateOrder %>
-<%end%>
+<div class='box1'>	
+	<h1>New Order <%= @phone.name %> </h1>
+	<%= form_for :order,url: phone_orders_path(@phone) do |f| %>
+		<%= f.label :NameCustomer %>
+		<%= f.text_field :namecustomer %>
+		<%= f.label :PhoneNumber %>
+		<%= f.text_field :phonenumber %>
+		<%= f.label :Address %>
+		<%= f.text_field :address %>
+		<%= f.label :number %>
+		<%= f.number_field :num %>
+		<%= f.submit :CreateOrder %>
+	<%end%>
+</div>

@@ -1,16 +1,18 @@
-<div class="container">
-	<h1>Your all products</h1>
-	
-	<%= link_to 'New item',new_product_path %>
-	<%= link_to 'Home',welcome_home_path %>
-	<hr/>
-	<table>
-	<% @products.each do |t| %>	
-		<tr>
-			<td><%= link_to t.name ,t %></td>
-			<td><%= link_to ' Edit',edit_product_path(t)%>|</td>
-			<td><%= link_to 'Delete',product_path(t),method: 'delete',data: {confirm: "Are you sure ?"}%></td>
-		</tr>	
-	<%end%>
-	</table>
+<div class='box1'>	
+	<div class="container">
+		<h1>Your all products</h1>
+		
+		<%= link_to 'New item',new_product_path %>
+		<%= link_to 'Home',welcome_home_path %>
+		<hr/>
+		<table>
+		<% @products.each do |t| %>	
+			<tr>
+				<td><%= link_to t.name ,t %></td>
+				<td><%= link_to ' Edit',edit_product_path(t)%>|</td>
+				<td><%= link_to 'Delete',product_path(t),method: 'delete',data: {confirm: "Are you sure ?"}%></td>
+			</tr>	
+		<%end%>
+		</table>
+	</div>
 </div>

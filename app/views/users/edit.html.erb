@@ -1,26 +1,28 @@
-<div class="container">
-	<h1>Edit</h1>
-	<%= form_for @user do |f| %>
-	   <%= f.label :name %>
-	   <br/>
-	   <%= f.text_field :name %>
-	   <br/>
-	   <%= f.label :email %>
-	   <br/>
-	   <%= f.email_field :email %>
-	   <br/>
-	   <%= f.label :password %>
-	   <br/>
-	   <%= f.password_field :password %>
-	   <br/>
-	   <%= f.label :ConfirmPassword%>
-	   <br/>
-	   <%= f.password_field :password_confirmation %>
-	   <br/>
-	   <%= f.submit "Edit"%>
-	 <% end %>
-	 <%=link_to 'Home',welcome_home_path%>
-	 <% if logged_in? %>
-		<%= link_to 'Log out',logout_path,method: 'delete'%>
-	<%end%>
+<div class='box1'>	
+	<div class="container">
+		<h1>Edit</h1>
+		<%= form_for @user do |f| %>
+		   <%= f.label :name %>
+		   <br/>
+		   <%= f.text_field :name %>
+		   <br/>
+		   <%= f.label :email %>
+		   <br/>
+		   <%= f.email_field :email %>
+		   <br/>
+		   <%= f.label :password %>
+		   <br/>
+		   <%= f.password_field :password %>
+		   <br/>
+		   <%= f.label :ConfirmPassword%>
+		   <br/>
+		   <%= f.password_field :password_confirmation %>
+		   <br/>
+		   <%= f.submit "Edit"%>
+		 <% end %>
+		 <%=link_to 'Home',welcome_home_path%>
+		 <% if logged_in? %>
+			<%= link_to 'Log out',logout_path,method: 'delete'%>
+		<%end%>
+	</div>
 </div>

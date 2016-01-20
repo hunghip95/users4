@@ -1,17 +1,19 @@
-<div class="container">
-	<h1>Hello <%=@user.name%>!</h1>
-	Name:<%= link_to @user.name,@user %>
-	<br/>
-	Email:<%= @user.email %>
-	<br/>
-	
-	<% if logged_in? %>
-		<%= link_to 'Log out',logout_path,method: 'delete' %>
-		<%= link_to 'Edit',edit_user_path %>
-	<%else%>
-		<%= link_to 'Login',login_path %>
-	<%end%>
-	<br/>
-	<%= link_to 'Home',welcome_home_path %>
-	<br/>
+<div class='box1'>	
+	<div class="container">
+		<h1>Hello <%=@user.name%>!</h1>
+		Name:<%= link_to @user.name,@user %>
+		<br/>
+		Email:<%= @user.email %>
+		<br/>
+		
+		<% if logged_in? %>
+			<%= link_to 'Log out',logout_path,method: 'delete' %>
+			<%= link_to 'Edit',edit_user_path %>
+		<%else%>
+			<%= link_to 'Login',login_path %>
+		<%end%>
+		<br/>
+		<%= link_to 'Home',welcome_home_path %>
+		<br/>
+	</div>
 </div>
