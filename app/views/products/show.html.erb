@@ -14,6 +14,7 @@
 		<table>	
 			<% @phones.each do |t| %>
 				<tr>
+					<td><%= link_to (image_tag t.image.url(:thumb)),product_phone_path(@product,t)%></td>
 					<td><%= link_to t.name,product_phone_path(@product,t) %></td>
 					<td>Price:<%= t.price%></td>
 					<td> 

@@ -35,16 +35,19 @@
 		<div class="row" >
 			<div class="col-md-4"></div>  
 			<%= form_tag search_index_path do  %>
-			<%= text_field_tag :keyword,params[:keyword] %>
-			<%= submit_tag :Search %>
-		<%end%>
+				<%= text_field_tag :keyword,params[:keyword] %>
+				<%= submit_tag :Search %>
+			<%end%>
 		</div>		
 	</div>
-	<% @products.each do |t|%>
-	
-		<tr><%= link_to t.name,t %>	</tr>
-	<%end%>	
-
+	<div class='list'>
+		<ul>
+			<% @products.each do |t|%>
+				<li><a><%= link_to t.name,t %></a></li>
+			<%end%>	
+		</ul>
+		
+	</div>
 </div>	
 <%= yield %>
 

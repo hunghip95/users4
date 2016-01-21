@@ -38,7 +38,7 @@ class PhoneController < ApplicationController
   
   private
     def phone
-      params.require(:phone).permit(:name,:price)
+      params.require(:phone).permit(:name,:price,:image)
     end
     
     def get_product_id

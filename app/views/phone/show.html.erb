@@ -2,8 +2,15 @@
 	<div class="container">
 		
 		<h1>Your phone</h1>
-		Name:<%= @phone.name %>
-		Price:<%= @phone.price %>
+		<p>
+			<%= image_tag @phone.image.url(:medium)%>
+		</p>
+		<p>
+			Name:<%= @phone.name %>
+		</p>
+		<p>
+			Price:<%= @phone.price %>
+		</p>
 		
 		<%= form_tag phone_baskets_path(@phone) do  %>
 			<%= label_tag :Number%>

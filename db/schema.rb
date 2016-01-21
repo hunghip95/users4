@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160118020029) do
+ActiveRecord::Schema.define(version: 20160121035032) do
 
   create_table "add_colum_to_baskets", force: :cascade do |t|
     t.integer  "phone_id"
@@ -96,9 +96,13 @@ ActiveRecord::Schema.define(version: 20160118020029) do
   create_table "phones", force: :cascade do |t|
     t.string   "name"
     t.integer  "product_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.integer  "price"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "phones", ["name"], name: "index_phones_on_name"
