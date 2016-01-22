@@ -19,4 +19,7 @@ class ApplicationController < ActionController::Base
     def products
       @products = Product.all
     end
+    def phones
+      @phones = Phone.all
+    end
 end

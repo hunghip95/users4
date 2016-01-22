@@ -1,7 +1,7 @@
 <div class='box1'>	
 	<div class="container">
 		<h1>Edit your phone</h1>
-		<%= form_for @phone,url: phone_path(@phone) do |f| %>
+		<%= form_for @phone,url: phone_path(@phone),html: { multipart: true } do |f| %>
 			<%= f.label :image%>
 			<%= f.file_field :image%>
 			<%= f.label :name %>
