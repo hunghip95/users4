@@ -3,7 +3,7 @@
 <body>	
 	<div class='box1'>			
 		<% @phones.each do |t| %>
-			<%= image_tag t.image.url(:medium) %>	
+			<%= link_to (image_tag t.image.url(:medium)),phone_path(t) %>	
 		<%end%>
 	</div>
 </body>
