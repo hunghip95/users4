@@ -5,7 +5,10 @@ class SearchController < ApplicationController
   end
   
   def create
-    @result = Phone.where(['name LIKE ?', "%#{get}%" ])
+    @a = Phone.search do
+      fulltext get
+    end
+    @result = @a.results
     render :index
   end
   

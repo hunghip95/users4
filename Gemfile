@@ -54,5 +54,12 @@ group :production do
 end
 
 gem "paperclip", "~> 4.3"
+gem 'aws-sdk'
 
+gem 'sunspot_rails'
+ 
+group :development do
+    gem 'sunspot_solr'
+end
 
+gem 'progress_bar'
